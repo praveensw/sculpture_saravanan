@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Quote | Custom Temple Sculpture Enquiry</title>
+<meta name="description" content="Send your custom temple sculpture enquiry: deity statues, gopuram works, pillars and mandapam sculptures in Tamil Nadu. Upload references and request a quotation.">
+<link rel="canonical" href="https://www.example.com/enquiry.html">
+<meta name="theme-color" content="#3f0b16">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Temple Sculpture Works, Tamil Nadu">
+<meta property="og:title" content="Request a Quote | Custom Temple Sculpture Enquiry">
+<meta property="og:description" content="Send your custom temple sculpture enquiry: deity statues, gopuram works, pillars and mandapam sculptures in Tamil Nadu. Upload references and request a quotation.">
+<meta property="og:url" content="https://www.example.com/enquiry.html">
+<meta property="og:image" content="https://www.example.com/images/og-image.jpg">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="enquiry">
+<div id="site-header"></div>
+<main id="main">
+<section class="page-hero"><div class="container">
+<p class="breadcrumb"><a href="index.html">Home</a> / Enquiry</p>
+<h1>Custom Project Enquiry</h1><p>Tell us about your temple sculpture requirement.</p></div></section>
+<section class="section"><div class="container" style="max-width:900px"><div class="form-card reveal"><form id="enquiryForm" data-form="project-enquiry" data-success="enquirySuccess" novalidate>
+<div class="form-grid">
+<div class="field"><label for="name">Customer Name <span class="req" aria-hidden="true">*</span></label><input id="name" name="name" type="text" required aria-describedby="name-err" autocomplete="name"><div class="error" id="name-err" role="alert"></div></div>
+<div class="field"><label for="mobile">Mobile Number <span class="req" aria-hidden="true">*</span></label><input id="mobile" name="mobile" type="tel" required aria-describedby="mobile-err" autocomplete="tel" inputmode="tel" placeholder="10-digit mobile number"><div class="error" id="mobile-err" role="alert"></div></div>
+<div class="field"><label for="email">Email Address <span class="req" aria-hidden="true">*</span></label><input id="email" name="email" type="email" required aria-describedby="email-err" autocomplete="email"><div class="error" id="email-err" role="alert"></div></div>
+<div class="field"><label for="project">Temple / Project Name <span class="req" aria-hidden="true">*</span></label><input id="project" name="project" type="text" required aria-describedby="project-err" ><div class="error" id="project-err" role="alert"></div></div>
+<div class="field"><label for="category">Sculpture Category <span class="req" aria-hidden="true">*</span></label><select id="category" name="category" required aria-describedby="category-err"><option value="">Select a category</option><option value="deity">Deity Sculptures</option><option value="gopuram">Gopuram Works</option><option value="pillar">Pillar Sculptures</option><option value="mandapam">Mandapam Works</option><option value="architecture">Temple Architecture</option><option value="decorative">Decorative Sculptures</option><option value="completed">Complete Temple Project</option><option value="restoration">Restoration / Renovation</option><option value="other">Other</option></select><div class="error" id="category-err" role="alert"></div></div>
+<div class="field"><label for="location">Project Location <span class="req" aria-hidden="true">*</span></label><input id="location" name="location" type="text" required aria-describedby="location-err" placeholder="Town, District"><div class="error" id="location-err" role="alert"></div></div>
+<div class="field"><label for="dimensions">Approximate Dimensions</label><input id="dimensions" name="dimensions" type="text" aria-describedby="dimensions-err" placeholder="e.g. height 6 ft"><div class="hint">Height / width / depth, if known.</div><div class="error" id="dimensions-err" role="alert"></div></div>
+<div class="field"><label for="quantity">Required Quantity</label><input id="quantity" name="quantity" type="number" aria-describedby="quantity-err" min="1" inputmode="numeric"><div class="error" id="quantity-err" role="alert"></div></div>
+<div class="field"><label for="completion">Expected Completion Date</label><input id="completion" name="completion" type="date" aria-describedby="completion-err" ><div class="error" id="completion-err" role="alert"></div></div>
+<div class="field full"><label for="images">Reference Images</label><input id="images" name="images" type="file" accept="image/*" multiple aria-describedby="images-err"><div class="hint">Up to 5 images, 5 MB each (optional).</div><div class="file-list" aria-live="polite"></div><div class="error" id="images-err" role="alert"></div></div>
+<div class="field full"><label for="description">Project Description <span class="req" aria-hidden="true">*</span></label><textarea id="description" name="description" required aria-describedby="description-err" placeholder="Describe the work, style, finish and any special requirements"></textarea><div class="error" id="description-err" role="alert"></div></div>
+<div class="hp" aria-hidden="true"><label for="website_hp">Leave this empty</label><input id="website_hp" name="website_hp" type="text" tabindex="-1" autocomplete="off"></div>
+</div>
+<p class="hint"><span class="req">*</span> Required fields</p>
+<div class="form-actions"><button class="btn btn--maroon" type="submit">Submit Enquiry</button></div>
+</form>
+<div class="form-success" id="enquirySuccess" role="status">
+<h3>Thank you – your enquiry is ready</h3>
+<p data-note></p>
+<div class="form-actions"><a class="btn btn--wa" data-wa href="enquiry.html">Send on WhatsApp</a><button class="btn btn--outline-dark" type="button" data-again>Submit another enquiry</button></div>
+</div></div></div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+</body>
+</html>

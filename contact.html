@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Temple Sculpture Works, Tamil Nadu</title>
+<meta name="description" content="Contact our temple sculpture workshop in Tamil Nadu: address, phone, WhatsApp, email, business hours and map. Send a message or request a quote.">
+<link rel="canonical" href="https://www.example.com/contact.html">
+<meta name="theme-color" content="#3f0b16">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Temple Sculpture Works, Tamil Nadu">
+<meta property="og:title" content="Contact Us | Temple Sculpture Works, Tamil Nadu">
+<meta property="og:description" content="Contact our temple sculpture workshop in Tamil Nadu: address, phone, WhatsApp, email, business hours and map. Send a message or request a quote.">
+<meta property="og:url" content="https://www.example.com/contact.html">
+<meta property="og:image" content="https://www.example.com/images/og-image.jpg">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<div id="site-header"></div>
+<main id="main">
+<section class="page-hero"><div class="container">
+<p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+<h1>Contact Us</h1><p>We would be glad to discuss your temple project.</p></div></section>
+<section class="section"><div class="container grid grid--2" style="align-items:start">
+<div class="reveal"><span class="eyebrow">Get in touch</span><h2>Our Details</h2>
+<ul class="contact-list">
+<li><span class="icon" data-icon="pin"></span><div><strong>Address</strong><span data-site="contact.address"></span></div></li>
+<li><span class="icon" data-icon="phone"></span><div><strong>Phone</strong><a id="cPhone" href="#"><span data-site="contact.phoneDisplay"></span></a></div></li>
+<li><span class="icon" data-icon="chat"></span><div><strong>WhatsApp</strong><a id="cWa" href="enquiry.html">Chat with us on WhatsApp</a></div></li>
+<li><span class="icon" data-icon="mail"></span><div><strong>Email</strong><a id="cMail" href="#"><span data-site="contact.email"></span></a></div></li>
+<li><span class="icon" data-icon="clock"></span><div><strong>Business Hours</strong><span id="cHours"></span></div></li>
+</ul>
+<div class="map-wrap"><iframe id="mapFrame" title="Business location on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="about:blank"></iframe></div>
+</div>
+<div class="form-card reveal"><h2 style="font-size:1.8rem">Send a Message</h2><form id="contactForm" data-form="contact" data-success="contactSuccess" novalidate>
+<div class="form-grid">
+<div class="field"><label for="c_name">Your Name <span class="req" aria-hidden="true">*</span></label><input id="c_name" name="name" type="text" required aria-describedby="c_name-err" autocomplete="name"><div class="error" id="c_name-err" role="alert"></div></div>
+<div class="field"><label for="c_mobile">Mobile Number <span class="req" aria-hidden="true">*</span></label><input id="c_mobile" name="mobile" type="tel" required aria-describedby="c_mobile-err" autocomplete="tel" inputmode="tel"><div class="error" id="c_mobile-err" role="alert"></div></div>
+<div class="field"><label for="c_email">Email Address <span class="req" aria-hidden="true">*</span></label><input id="c_email" name="email" type="email" required aria-describedby="c_email-err" autocomplete="email"><div class="error" id="c_email-err" role="alert"></div></div>
+<div class="field full"><label for="c_message">Message <span class="req" aria-hidden="true">*</span></label><textarea id="c_message" name="message" required aria-describedby="c_message-err" ></textarea><div class="error" id="c_message-err" role="alert"></div></div>
+<div class="hp" aria-hidden="true"><label for="c_hp">Leave this empty</label><input id="c_hp" name="website_hp" type="text" tabindex="-1" autocomplete="off"></div>
+</div>
+<div class="form-actions"><button class="btn btn--maroon" type="submit">Send Message</button></div>
+</form>
+<div class="form-success" id="contactSuccess" role="status"><h3>Thank you – your message is ready</h3><p data-note></p>
+<div class="form-actions"><a class="btn btn--wa" data-wa href="contact.html">Send on WhatsApp</a><button class="btn btn--outline-dark" type="button" data-again>Send another message</button></div></div></div>
+</div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var C=window.SITE.contact;
+  document.getElementById("cPhone").href="tel:"+C.phoneTel;
+  document.getElementById("cMail").href="mailto:"+C.email;
+  var w=document.getElementById("cWa");w.href=waLink("Hello, I would like to enquire about temple sculpture works.");
+  if(window.SITE.isConfigured){w.target="_blank";w.rel="noopener";}
+  document.getElementById("cHours").innerHTML=C.hours.map(function(h){return "<b>"+h.days+":</b> "+h.time}).join("<br>");
+  document.getElementById("mapFrame").src=C.mapEmbedUrl||("https://www.google.com/maps?q="+encodeURIComponent(C.mapQuery)+"&output=embed");
+});
+</script>
+</body>
+</html>
