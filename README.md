@@ -13,13 +13,15 @@ python3 -m http.server 8000     # then visit http://localhost:8000
 ## 2. Folder structure
 
 ```
-index.html  about.html  services.html  works.html  process.html  enquiry.html  contact.html
+index.html  about.html  services.html  works.html  experience.html (3D tour)  process.html  enquiry.html  contact.html
 css/style.css            all styling (colour variables at the top of the file)
 js/config.js             ★ business name, phone, WhatsApp, email, address, hours, map, social links
 js/components.js         reusable header, footer, floating WhatsApp button, icons, structured data
 js/main.js               mobile menu, sticky header, scroll animations
 js/gallery.js            gallery filters, masonry/grid layout, lightbox
 js/forms.js              form validation, success message, WhatsApp hand-off, backend hook
+js/temple3d.js           3D Temple Experience scene (Three.js)
+js/vendor/               three.min.js + OrbitControls.js (bundled, MIT licence) – no CDN needed
 data/projects.js         ★ portfolio projects and categories
 images/                  favicon, placeholder images (images/placeholders/)
 robots.txt  sitemap.xml  SEO files
@@ -96,7 +98,16 @@ Note: header and footer are injected by `js/components.js`; page content itself 
 
 Skip link, keyboard-operable menu and lightbox (Esc, ←/→), focus styles, ARIA labels, form error announcements, reduced-motion support, high-contrast palette, mobile-first CSS, lazy loading and no heavy libraries.
 
-## 10. Future expansion (not built yet, by design)
+## 10. The 3D Temple Experience (`experience.html`)
+
+An interactive, procedurally generated South Indian gopuram built with Three.js. Visitors can drag to rotate, scroll/pinch to zoom, switch camera views (Aerial, Front, Entrance, Crown), change lighting (Day, Dusk, Night), toggle auto-rotate, go full screen, and tap gold markers that explain each part and link to the matching service.
+
+- It is **illustrative** and labelled as such on the page – it is not a model of any real project. Keep that note unless you replace it with your own scanned/modelled work.
+- Edit marker texts and links in `HOTS` (and camera positions in `VIEWS`, colours in `TIMES`) inside `js/temple3d.js`.
+- To use a real 3D model later (e.g. a `.glb` of your own sculpture), add `GLTFLoader.js` from the same Three.js version to `js/vendor/` and load it in `temple3d.js` in place of the procedural gopuram.
+- It pauses when off-screen, caps pixel ratio on phones, respects reduced-motion, and shows a friendly fallback if WebGL is unavailable.
+
+## 11. Future expansion (not built yet, by design)
 
 The following are intentionally **not** in this release (no dead buttons): admin dashboard, dynamic portfolio management, enquiry management, quotation generation, customer login, order tracking, production, inventory, labour and expense/financial modules.
 

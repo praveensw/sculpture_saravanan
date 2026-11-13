@@ -65,8 +65,8 @@ p{margin:0 0 1rem}
 @media(min-width:960px){
   .nav-toggle{display:none}
   .nav-links{position:static;display:flex;align-items:center;gap:.2rem;background:none;padding:0;border:0}
-  .nav-links a{border:0;padding:.5rem .75rem;font-size:.97rem;position:relative}
-  .nav-links a[aria-current="page"]::after{content:"";position:absolute;left:.75rem;right:.75rem;bottom:.1rem;height:2px;background:var(--gold-light)}
+  .nav-links a{border:0;padding:.5rem .6rem;font-size:.95rem;position:relative}
+  .nav-links a[aria-current="page"]::after{content:"";position:absolute;left:.6rem;right:.6rem;bottom:.1rem;height:2px;background:var(--gold-light)}
   .nav-links .btn{margin:0 0 0 .6rem;width:auto;padding:.55rem 1.2rem}
   .nav-links .btn::after{display:none}
 }
@@ -231,3 +231,35 @@ p{margin:0 0 1rem}
   .reveal{opacity:1;transform:none}
 }
 @media print{.site-header,.wa-float,.lightbox{display:none}}
+
+/* ==========================================================================
+   3D Temple Experience (experience.html)
+   ========================================================================== */
+.stage-bar{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;justify-content:center;align-items:center;margin-bottom:1rem}
+.stage-bar .group{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:center}
+.stage-bar .group-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brown-soft);font-weight:700;margin-right:.2rem}
+.stage{position:relative;height:clamp(440px,74vh,740px);background:#cfe4f2;border:6px solid var(--white);outline:2px solid var(--gold);border-radius:6px;box-shadow:var(--shadow);overflow:hidden;touch-action:none}
+.stage:fullscreen{height:100vh;border:0;outline:0;border-radius:0}
+.stage canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+.stage canvas:active{cursor:grabbing}
+.stage-loading,.stage-fallback{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:1rem;text-align:center;padding:1.5rem;background:var(--maroon-deep);color:var(--sand-soft);z-index:5}
+.stage-loading[hidden],.stage-fallback[hidden]{display:none}
+.hotspots{position:absolute;inset:0;pointer-events:none;z-index:3}
+.hotspot{position:absolute;left:0;top:0;width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;pointer-events:auto}
+.hotspot span{position:absolute;inset:11px;border-radius:50%;background:var(--gold-light);border:2px solid var(--maroon-deep);box-shadow:0 0 0 0 rgba(212,175,97,.7);animation:pulse 2s infinite}
+.hotspot.active span{background:var(--maroon);border-color:var(--gold-light)}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(212,175,97,0)}100%{box-shadow:0 0 0 0 rgba(212,175,97,0)}}
+.info3d{position:absolute;left:1rem;bottom:1rem;max-width:340px;background:rgba(251,246,234,.97);border:1px solid var(--gold);border-radius:var(--radius);padding:1.1rem 1.2rem 1.2rem;box-shadow:var(--shadow);z-index:4}
+.info3d[hidden]{display:none}
+.info3d h3{font-size:1.25rem;padding-right:1.8rem}
+.info3d p{font-size:.95rem;margin-bottom:.8rem}
+.info3d .btn{padding:.5rem 1.1rem;font-size:.92rem}
+.info3d [data-close]{position:absolute;top:.4rem;right:.5rem;width:34px;height:34px;border:0;background:none;font-size:1.1rem;cursor:pointer;color:var(--maroon)}
+.hint3d{position:absolute;top:.8rem;left:50%;transform:translateX(-50%);background:rgba(43,26,16,.78);color:var(--ivory);padding:.35rem 1rem;border-radius:999px;font-size:.85rem;white-space:nowrap;z-index:2;transition:opacity .8s;pointer-events:none}
+.hint3d.fade{opacity:0}
+.teaser-3d{background:linear-gradient(160deg,var(--maroon-deep),#1b0a12);color:var(--ivory)}
+@media(max-width:640px){
+  .stage{height:62vh;min-height:420px}
+  .info3d{left:.5rem;right:.5rem;max-width:none;bottom:.5rem}
+  .hint3d{white-space:normal;text-align:center;width:88%}
+}

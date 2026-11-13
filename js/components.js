@@ -42,6 +42,7 @@
     ['about.html', 'About', 'about'],
     ['services.html', 'Services', 'services'],
     ['works.html', 'Our Works', 'works'],
+    ['experience.html', '3D Tour', 'experience'],
     ['process.html', 'Process', 'process'],
     ['contact.html', 'Contact', 'contact']
   ];

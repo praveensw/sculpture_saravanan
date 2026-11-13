@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Temple Experience | Explore a South Indian Gopuram in 3D</title>
+<meta name="description" content="Explore an interactive 3D South Indian temple gopuram: rotate, zoom and see gopuram sculptures, entrance decoration, pillars and installation services in Tamil Nadu.">
+<link rel="canonical" href="https://www.example.com/experience.html">
+<meta name="theme-color" content="#3f0b16">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Temple Sculpture Works, Tamil Nadu">
+<meta property="og:title" content="3D Temple Experience | Explore a South Indian Gopuram in 3D">
+<meta property="og:description" content="Explore an interactive 3D South Indian temple gopuram: rotate, zoom and see gopuram sculptures, entrance decoration, pillars and installation services in Tamil Nadu.">
+<meta property="og:url" content="https://www.example.com/experience.html">
+<meta property="og:image" content="https://www.example.com/images/og-image.jpg">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mukta:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="experience">
+<div id="site-header"></div>
+<main id="main">
+<section class="page-hero"><div class="container">
+<p class="breadcrumb"><a href="index.html">Home</a> / 3D Tour</p>
+<h1>3D Temple Experience</h1><p>Explore an illustrative South Indian gopuram in three dimensions.</p></div></section>
+<section class="section"><div class="container">
+<div class="section-head reveal"><span class="eyebrow">Interactive</span><h2>Explore the Gopuram</h2><div class="ornament" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg></div>
+<p>Drag to look around, scroll or pinch to zoom, and tap the gold markers to learn about each part and the matching service.</p></div>
+<div class="stage-bar">
+<div class="group" role="group" aria-label="Camera views"><span class="group-label">View</span>
+<button class="filter-btn" type="button" data-view="aerial" aria-pressed="true">Aerial</button>
+<button class="filter-btn" type="button" data-view="front" aria-pressed="false">Front</button>
+<button class="filter-btn" type="button" data-view="close" aria-pressed="false">Entrance</button>
+<button class="filter-btn" type="button" data-view="crown" aria-pressed="false">Crown</button></div>
+<div class="group" role="group" aria-label="Time of day"><span class="group-label">Light</span>
+<button class="filter-btn" type="button" data-time="day" aria-pressed="true">Day</button>
+<button class="filter-btn" type="button" data-time="dusk" aria-pressed="false">Dusk</button>
+<button class="filter-btn" type="button" data-time="night" aria-pressed="false">Night</button></div>
+<div class="group"><button class="filter-btn" type="button" id="autoRotate" aria-pressed="true">Auto-rotate: On</button>
+<button class="filter-btn" type="button" id="fullscreen3d">Full screen</button></div>
+</div>
+<div class="stage" id="stage3d" tabindex="0">
+<div class="stage-loading" id="loading3d" role="status">Loading 3D model…</div>
+<div class="stage-fallback" id="fallback3d" hidden><p data-msg>The 3D view is not available.</p><a class="btn btn--gold" href="works.html">View Our Works</a></div>
+<div class="hotspots" id="hotspots3d"></div>
+<aside class="info3d" id="info3d" hidden aria-live="polite"><button type="button" data-close aria-label="Close details">✕</button><h3></h3><p></p><a class="btn btn--maroon" href="services.html"></a></aside>
+<div class="hint3d" id="hint3d">Drag to rotate · Scroll / pinch to zoom · Tap the gold markers</div>
+</div>
+<div class="note-box" style="margin-top:1.5rem"><strong>Please note:</strong> this is an illustrative 3D model generated for this website to show the style of work. It is not a photograph or model of any completed project. See real projects in <a href="works.html">Our Works</a>.</div>
+</div></section>
+<section class="section section--maroon cta-band"><div class="container reveal">
+<h2>Planning a temple project?</h2>
+<p>Share your requirement, reference images and location. We will respond with the next steps for design approval and quotation.</p>
+<a class="btn btn--gold" href="enquiry.html">Request a Quote</a>
+</div></section>
+</main>
+<div id="site-footer"></div>
+<script src="js/config.js"></script>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/three.min.js"></script>
+<script src="js/vendor/OrbitControls.js"></script>
+<script src="js/temple3d.js"></script>
+</body>
+</html>
