@@ -120,7 +120,19 @@
     document.head.appendChild(s);
   }
 
+  /** Real photos: <img data-real="images/photos/x.jpg"> swaps to the real file only if it exists. */
+  function upgradePhotos() {
+    document.querySelectorAll('img[data-real]').forEach(function (img) {
+      var probe = new Image();
+      probe.onload = function () { img.src = probe.src; img.alt = img.getAttribute('data-real-alt') || img.alt.replace(/^Placeholder for (a |an )?/i, ''); img.removeAttribute('data-real'); };
+      probe.src = img.getAttribute('data-real');
+    });
+    var note = document.querySelector('.hero-note');
+    if (note) { var h = new Image(); h.onload = function () { note.remove(); }; h.src = 'images/photos/hero.jpg'; }
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
+    upgradePhotos();
     renderHeader(); renderFooter(); renderWhatsApp(); renderStructuredData();
     // Fill icon placeholders: <span class="icon" data-icon="deity"></span>
     document.querySelectorAll('[data-icon]').forEach(function (el) { el.innerHTML = ICONS[el.getAttribute('data-icon')] || ''; });

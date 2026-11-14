@@ -21,7 +21,8 @@ js/main.js               mobile menu, sticky header, scroll animations
 js/gallery.js            gallery filters, masonry/grid layout, lightbox
 js/forms.js              form validation, success message, WhatsApp hand-off, backend hook
 js/temple3d.js           3D Temple Experience scene (Three.js)
-js/vendor/               three.min.js + OrbitControls.js (bundled, MIT licence) – no CDN needed
+js/vendor/               three.min.js, OrbitControls.js, BufferGeometryUtils.js (bundled, MIT licence) – no CDN needed
+images/photos/           ★ drop YOUR real photos here (hero.jpg, about.jpg, workshop.jpg) – used automatically
 data/projects.js         ★ portfolio projects and categories
 images/                  favicon, placeholder images (images/placeholders/)
 robots.txt  sitemap.xml  SEO files
@@ -31,7 +32,7 @@ robots.txt  sitemap.xml  SEO files
 
 1. **`js/config.js`** – replace every value marked `REPLACE`: business name, address, phone, WhatsApp number (country code + number, no `+`), email, hours, domain (`siteUrl`), social links.
 2. **Google Maps** – on Google Maps search your business → *Share* → *Embed a map* → copy the `src="…"` URL into `contact.mapEmbedUrl`.
-3. **Images** – every picture in `images/placeholders/` is a **labelled placeholder**. Replace with real photographs of your own work (see §5). Do not use photos of projects you did not execute.
+3. **Images** – every picture in `images/placeholders/` is a **labelled placeholder**. Add real photographs of your own work: put `hero.jpg`, `about.jpg` and `workshop.jpg` in `images/photos/` (they replace the placeholders automatically and the "placeholder" note disappears), and add project photos as described in §5. Do not use photos of projects you did not execute.
 4. **About page** – replace the highlighted note box in `about.html` with your real company story. Add only verified facts (no years of experience, awards or project counts unless true).
 5. **Restoration service** – `services.html` includes "Sculpture Restoration and Renovation". If you do not offer it, delete that `<article id="restoration">` block and remove the link to it from your menu/footer if added.
 6. **Domain in SEO tags** – in every `.html` file, `robots.txt` and `sitemap.xml`, replace `https://www.example.com` with your real domain (use your editor's *Find & Replace in files*).
@@ -100,12 +101,12 @@ Skip link, keyboard-operable menu and lightbox (Esc, ←/→), focus styles, ARI
 
 ## 10. The 3D Temple Experience (`experience.html`)
 
-An interactive, procedurally generated South Indian gopuram built with Three.js. Visitors can drag to rotate, scroll/pinch to zoom, switch camera views (Aerial, Front, Entrance, Crown), change lighting (Day, Dusk, Night), toggle auto-rotate, go full screen, and tap gold markers that explain each part and link to the matching service.
+A realistic-style, interactive South Indian temple compound built with Three.js and generated entirely in code: a seven-kalasam gopuram with sloped tiers, arched niches and painted stucco figures; a stone-framed doorway with guardian figures; a pillared porch; red-and-white striped compound walls; a flagstaff; palms and hills; and devotees walking in the courtyard. Visitors can drag to rotate, scroll/pinch to zoom, switch camera views (Aerial, Front, Entrance, Crown), switch lighting (Day, Dusk, Night with lamps and string lights), toggle auto-rotate, go full screen, and tap gold markers that explain each part and link to the matching service.
 
-- It is **illustrative** and labelled as such on the page – it is not a model of any real project. Keep that note unless you replace it with your own scanned/modelled work.
-- Edit marker texts and links in `HOTS` (and camera positions in `VIEWS`, colours in `TIMES`) inside `js/temple3d.js`.
-- To use a real 3D model later (e.g. a `.glb` of your own sculpture), add `GLTFLoader.js` from the same Three.js version to `js/vendor/` and load it in `temple3d.js` in place of the procedural gopuram.
-- It pauses when off-screen, caps pixel ratio on phones, respects reduced-motion, and shows a friendly fallback if WebGL is unavailable.
+- It is **illustrative** and labelled as such on the page. It is not a photograph or model of any completed project; keep that note unless you replace it with your own scanned or modelled work.
+- Edit marker texts and links in `HOTS`, camera positions in `VIEWS`, lighting in `TIMES` and tier colours in `PLASTER` inside `js/temple3d.js`.
+- To show a real 3D model of your own sculpture later (a `.glb` file), add `GLTFLoader.js` from the same Three.js version (r128) to `js/vendor/` and load it in `temple3d.js`.
+- Performance: geometry is merged into a few draw calls, pixel ratio is capped on phones, rendering pauses when off-screen or the tab is hidden, reduced-motion is respected, and a friendly fallback shows if WebGL is unavailable.
 
 ## 11. Future expansion (not built yet, by design)
 
